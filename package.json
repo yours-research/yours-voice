@@ -1,0 +1,85 @@
+{
+  "name": "@yours/voice",
+  "version": "0.1.0",
+  "description": "100% local, zero-cloud browser voice SDK (Silero VAD + Whisper/Moonshine STT + Kokoro-82M streaming TTS with instant barge-in) for Chromium MV3 and WebGPU/WASM.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "homepage": "https://yours.sh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yours-research/yours-voice.git"
+  },
+  "keywords": [
+    "voice",
+    "vad",
+    "silero",
+    "whisper",
+    "moonshine",
+    "kokoro",
+    "tts",
+    "stt",
+    "webgpu",
+    "wasm",
+    "chrome-extension",
+    "mv3",
+    "local-ai"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./contracts": {
+      "types": "./dist/contracts.d.ts",
+      "import": "./dist/contracts.js"
+    },
+    "./audio": {
+      "types": "./dist/audio/index.d.ts",
+      "import": "./dist/audio/index.js"
+    },
+    "./vad": {
+      "types": "./dist/vad/index.d.ts",
+      "import": "./dist/vad/index.js"
+    },
+    "./stt": {
+      "types": "./dist/stt/index.d.ts",
+      "import": "./dist/stt/index.js"
+    },
+    "./tts": {
+      "types": "./dist/tts/index.d.ts",
+      "import": "./dist/tts/index.js"
+    },
+    "./adapters": {
+      "types": "./dist/adapters/index.d.ts",
+      "import": "./dist/adapters/index.js"
+    },
+    "./pipeline": {
+      "types": "./dist/pipeline/index.d.ts",
+      "import": "./dist/pipeline/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "ARCHITECTURE.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.4"
+  }
+}
